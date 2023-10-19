@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+body {
+    background-color: var(--page-bg);
+    padding-top: 80px;
+    font-family: "Open Sans", sans-serif;
+}
+
+/** basic css often used. **/
+
+/* flex */
+.f {
+    display: flex;
+}
+
+.f-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.a-c {
+    align-items: center;
+}
+
+.j-c {
+    justify-content: center;
+}
+
+.j-sb {
+    justify-content: space-between;
+}
+
+/* spacing */
+
+/* animations */
+
+@keyframes key-breath {
+    from {
+        background-color: unset;
+    }
+
+    to {
+        background-color: rgba(90, 163, 232, 0.4);
+    }
+}
+
+.key-breath {
+    animation-name: key-breath;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
