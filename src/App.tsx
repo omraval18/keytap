@@ -78,8 +78,9 @@ const App: FC = () => {
                 <Statistics />
                 <TextChecker
                     text={text}
-                    fontSize={visible ? "16px" : "32px"}
-                    lineHeight={visible ? "24px" : "48px"}
+                    textStyle={visible ? "visible-text" : "invisible-text"}
+                    // fontSize={visible ? "16px" : "32px"}
+                    // lineHeight={visible ? "24px" : "48px"}
                 />
                 <HiddenInput
                     onFinished={() => {

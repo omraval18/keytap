@@ -7,11 +7,28 @@ import globalContext, { KeyboardStatus } from "../context/global";
 const TextCheckerCss = css`
     color: var(--font);
     margin: 80px 0px;
-    padding: 0 20px 0 20px;
     letter-spacing: 0.1rem;
     line-height: 48px;
-
     text-align: center;
+
+    @media only screen and (min-width: 1025px) {
+        padding: 0 10% 0 10%;
+    }
+    @media only screen and (min-width: 1279px) {
+        padding: 0 15% 0 15%;
+    }
+    @media only screen and (min-width: 1365px) {
+        padding: 0 18% 0 18%;
+    }
+    @media only screen and (min-width: 1439px) {
+        padding: 0 20% 0 20%;
+    }
+    @media only screen and (min-width: 1679px) {
+        padding: 0 22% 0 22%;
+    }
+    @media only screen and (min-width: 1924px) {
+        padding: 0 25% 0 25%;
+    }
 `;
 
 enum LetterStatus {
@@ -51,11 +68,10 @@ const Letter: FC<LetterProps> = ({ status, children }) => {
 
 interface TextCheckerProps {
     text: string;
-    fontSize: string;
-    lineHeight: string;
+    textStyle: string;
 }
 
-const TextChecker: FC<TextCheckerProps> = ({ text, fontSize, lineHeight }) => {
+const TextChecker: FC<TextCheckerProps> = ({ text, textStyle }) => {
     const { input, status, setStatus, setStat } = useContext(globalContext);
     const [inputLen, setInputLen] = useState(input.length);
 
@@ -88,7 +104,7 @@ const TextChecker: FC<TextCheckerProps> = ({ text, fontSize, lineHeight }) => {
     }, [input]);
 
     return (
-        <div className={TextCheckerCss} style={{ fontSize: fontSize, lineHeight: lineHeight }}>
+        <div className={TextCheckerCss} id={textStyle}>
             {letters.map((letter, i) => {
                 let status: LetterStatus | undefined;
 

@@ -9,6 +9,8 @@ import globalContext, { KeyboardStatus } from "../context/global";
 
 const KeyboardCss = css`
     width: 920px;
+    position: fixed;
+    bottom: 0;
 
     & > div:not(:last-child) {
         margin-bottom: 12px;
@@ -27,7 +29,7 @@ export const MacKeyBoard: FC<{}> = () => {
     const { status } = useContext(globalContext);
 
     return (
-        <div className={KeyboardCss}>
+        <div className={KeyboardCss} id="keyboard">
             <KeyBoardRow>
                 <Key code="Backquote">`</Key>
                 <Key code="Digit1">1</Key>
