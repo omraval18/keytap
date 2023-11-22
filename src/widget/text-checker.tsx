@@ -6,11 +6,10 @@ import globalContext, { KeyboardStatus } from "../context/global";
 
 const TextCheckerCss = css`
     color: var(--font);
-    font-size: 16px;
     margin: 80px 0px;
     padding: 0 20px 0 20px;
     letter-spacing: 0.1rem;
-    line-height: 24px;
+    line-height: 48px;
 
     text-align: center;
 `;
@@ -52,9 +51,11 @@ const Letter: FC<LetterProps> = ({ status, children }) => {
 
 interface TextCheckerProps {
     text: string;
+    fontSize: string;
+    lineHeight: string;
 }
 
-const TextChecker: FC<TextCheckerProps> = ({ text }) => {
+const TextChecker: FC<TextCheckerProps> = ({ text, fontSize, lineHeight }) => {
     const { input, status, setStatus, setStat } = useContext(globalContext);
     const [inputLen, setInputLen] = useState(input.length);
 
@@ -87,7 +88,7 @@ const TextChecker: FC<TextCheckerProps> = ({ text }) => {
     }, [input]);
 
     return (
-        <div className={TextCheckerCss}>
+        <div className={TextCheckerCss} style={{ fontSize: fontSize, lineHeight: lineHeight }}>
             {letters.map((letter, i) => {
                 let status: LetterStatus | undefined;
 
