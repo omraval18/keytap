@@ -1,21 +1,19 @@
-import randWord from 'random-words'
+import randWord from "random-words";
 
-interface TextGeneratorOptions {
+interface TextGeneratorOptions {}
 
-}
-
-const MAX_LENGTH = 100
+const MAX_LENGTH = 50;
 
 const generateText = (options: TextGeneratorOptions): string => {
-  let text = ''
+    let text = "";
 
-  while (text.length < MAX_LENGTH) {
-    if (text !== '') {
-      text += ' '
+    while (text.length < MAX_LENGTH) {
+        if (text !== "") {
+            text += " ";
+        }
+        text += randWord(1);
     }
-    text += randWord(1)
-  }
-  return text
-}
+    return text;
+};
 
-export default generateText
+export default generateText;

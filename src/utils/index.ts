@@ -6,6 +6,7 @@ export interface DurationTimer {
     duration: number;
     pause: VoidFunction;
     continue: VoidFunction;
+    reset: VoidFunction;
 }
 
 // create a timer witch can be paused
@@ -29,5 +30,8 @@ export const useDurationTimer = (): DurationTimer => {
         duration,
         pause: () => setPaused(true),
         continue: () => setPaused(false),
+        reset: () => {
+            setDuration(0);
+        },
     };
 };

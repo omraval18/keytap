@@ -6,9 +6,11 @@ import globalContext, { KeyboardStatus } from "../context/global";
 
 const TextCheckerCss = css`
     color: var(--font);
-    font-size: 20px;
+    font-size: 16px;
     margin: 80px 0px;
+    padding: 0 20px 0 20px;
     letter-spacing: 0.1rem;
+    line-height: 24px;
 
     text-align: center;
 `;
@@ -79,25 +81,6 @@ const TextChecker: FC<TextCheckerProps> = ({ text }) => {
             }));
         }
     }, [input, text, status]);
-
-    useEffect(() => {
-        if (durationTimer.duration === 0) {
-            setStat((stat) => ({
-                ...stat,
-                accuracy: inputLen - stat.typos,
-            }));
-        } else if (inputLen === 0) {
-            setStat((stat) => ({
-                ...stat,
-                accuracy: 100,
-            }));
-        } else {
-            setStat((stat) => ({
-                ...stat,
-                accuracy: 0,
-            }));
-        }
-    }, [input]);
 
     useEffect(() => {
         setInputLen(input.length);
