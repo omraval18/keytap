@@ -55,7 +55,7 @@ interface TextCheckerProps {
 }
 
 const TextChecker: FC<TextCheckerProps> = ({ text }) => {
-    const { input, status, setStatus, setStat, durationTimer } = useContext(globalContext);
+    const { input, status, setStatus, setStat } = useContext(globalContext);
     const [inputLen, setInputLen] = useState(input.length);
 
     const letters = [...text];

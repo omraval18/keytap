@@ -91,12 +91,14 @@ const Statistics: FC<{}> = () => {
             setStat((prevStat) => ({ ...prevStat, typos: 0 }));
         }
         prevText.current = text;
+        durationTimer.reset();
     }, [text]);
 
     const prevText = useRef(text);
 
     const speed = useMemo(() => {
         if (durationTimer.duration == 0) return 0;
+        console.log(durationTimer.duration);
         return Math.floor((input.length / 5 / durationTimer.duration) * 60);
     }, [durationTimer.duration, text]);
 

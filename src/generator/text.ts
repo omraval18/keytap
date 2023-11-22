@@ -2,7 +2,7 @@ import randWord from "random-words";
 
 interface TextGeneratorOptions {}
 
-const MAX_LENGTH = 50;
+const MAX_LENGTH = 300;
 
 const generateText = (options: TextGeneratorOptions): string => {
     let text = "";
