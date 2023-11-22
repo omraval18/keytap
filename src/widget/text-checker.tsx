@@ -50,6 +50,9 @@ const Letter: FC<LetterProps> = ({ status, children }) => {
             case LetterStatus.correct:
                 return `color: var(--letter-correct)`;
             case LetterStatus.typo:
+                if (children === " ") {
+                    return `background-color: var(--letter-typo)`;
+                }
                 return `color: var(--letter-typo)`;
         }
         return "";
